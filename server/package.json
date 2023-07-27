@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "build": "cd../reactapp && npm install && npm run build"
+    "build": "cd.. && npm install && npm run build"
   },
-  "engines":{"node":">=14<15"},
+  "engines":{"node":">=14 <15"},
   "keywords": [],
   "author": "",
   "license": "ISC",
