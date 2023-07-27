@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const app=express()
 const upload=require('express-fileupload')
+const path = require('path')
 app.use(cors())
 app.use(express.json())
 
@@ -25,5 +26,10 @@ app.post('/upload', (req, res, next) => {
         } 
         return res.status(200).json({ status: 'uploaded', name }) })
     })
+
+app.use(express.static(path.resolve(__dirname, '../build')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../build', 'index.html'))})
 
 app.listen(3001,()=>console.log('listen in port 3001'))
