@@ -9,12 +9,7 @@ import axios from 'axios'
 
 function App() 
 { let cards=[
-  {id:0, nome:'chicken curry nodles', prezzo:2.99, immagine:'./immagini/chicken-curry-black-cup-with-rice-noodles.jpg', quantità:0},
-  {id:1, nome:'tasty', prezzo:3.99, immagine:'./immagini/flat-lay-tasty-food-on-table-arrangement.jpg', quantità:0},
-  {id:2, nome:'spring_rolls', prezzo:4.50, immagine:'./immagini/fried-spring-rolls-cutting-board.jpg', quantità:0},
-  {id:3, nome:'ravioli', prezzo:3.50, immagine:'./immagini/ravioli.jpg', quantità:0},
-  {id:4, nome:'pho', prezzo:5.99, immagine:'./immagini/pho_vietnamita.jpg', quantità:0},
-  {id:5, nome:'pollo', prezzo:4.60, immagine:'./immagini/pollo_alle_mandorle.jpg', quantità:0}]
+  {id:0, nome:'chicken curry nodles', prezzo:2.99, immagine:'./immagini/chicken-curry-black-cup-with-rice-noodles.jpg', quantità:0},]
   
   const {register, handleSubmit, getValues, setValue}=useForm({
     mode:"onChange",defaultValues:{yourDetails:{id:"",nome:"",prezzo:"",foto:""}}})
@@ -85,7 +80,7 @@ function App()
       setList(newItem); 
       const edit=document.querySelector('#edit')
       edit.className="divOff"  
-      document.getElementById('insPiet').disabled=false},1000)
+      document.getElementById('insPiet').disabled=false},2000)
     }
   return (<> 
 <Navbar />
