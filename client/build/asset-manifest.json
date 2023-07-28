@@ -1,18 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.610a7467.css",
-    "main.js": "/static/js/main.a4767876.js",
+    "main.js": "/static/js/main.a4ea3045.js",
     "static/js/787.5480e000.chunk.js": "/static/js/787.5480e000.chunk.js",
+    "static/media/20190820_162457.jpg": "/static/media/20190820_162457.db6b634987888b57d48d.jpg",
+    "static/media/20190820_132618.jpg": "/static/media/20190820_132618.57d01cb759f5218ee850.jpg",
+    "static/media/20190819_213114.jpg": "/static/media/20190819_213114.98ae5f3773869f9191a1.jpg",
     "static/media/chicken-curry-black-cup-with-rice-noodles.jpg": "/static/media/chicken-curry-black-cup-with-rice-noodles.b3ef81445652011c51bb.jpg",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88.svg",
     "index.html": "/index.html",
     "static/media/testo.txt": "/static/media/testo.31d6cfe0d16ae931b73c.txt",
     "main.610a7467.css.map": "/static/css/main.610a7467.css.map",
-    "main.a4767876.js.map": "/static/js/main.a4767876.js.map",
+    "main.a4ea3045.js.map": "/static/js/main.a4ea3045.js.map",
     "787.5480e000.chunk.js.map": "/static/js/787.5480e000.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.610a7467.css",
-    "static/js/main.a4767876.js"
+    "static/js/main.a4ea3045.js"
   ]
 }

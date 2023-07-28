@@ -72,12 +72,12 @@ function App()
       .catch((err) => { setMsg('Upload failed'); console.error(err) })}
     // se mantengo la vecchia immagine devo togliere da olfImg ./immagini/
     else {file={name:oldImg.substring(11)}}
-    // trovo l'indice INDEX dell'elemento da modificare
-    const index = list.findIndex(card => card.id===idEdit) 
-    const elementModify={id:idEdit,nome:nomeEdit,prezzo:prezzoEdit,immagine:`./immagini/${file.name}`,quantità:0}
-    const newItem = [...list]; newItem[index] = elementModify; 
-    const rest=setTimeout (function() { 
-      setList(newItem); 
+    
+    setTimeout (function() { 
+      const index = list.findIndex(card => card.id===idEdit) // trovo l'indice INDEX dell'elemento da modificare
+      const elementModify={id:idEdit,nome:nomeEdit,prezzo:prezzoEdit,immagine:`./immagini/${file.name}`,quantità:0}
+      const newItem = [...list]; newItem[index] = elementModify
+      setList(newItem) 
       const edit=document.querySelector('#edit')
       edit.className="divOff"  
       document.getElementById('insPiet').disabled=false},2000)
