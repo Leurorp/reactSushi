@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.610a7467.css",
-    "main.js": "/static/js/main.cf494b60.js",
+    "main.js": "/static/js/main.a4767876.js",
     "static/js/787.5480e000.chunk.js": "/static/js/787.5480e000.chunk.js",
     "static/media/chicken-curry-black-cup-with-rice-noodles.jpg": "/static/media/chicken-curry-black-cup-with-rice-noodles.b3ef81445652011c51bb.jpg",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88.svg",
     "index.html": "/index.html",
     "static/media/testo.txt": "/static/media/testo.31d6cfe0d16ae931b73c.txt",
     "main.610a7467.css.map": "/static/css/main.610a7467.css.map",
-    "main.cf494b60.js.map": "/static/js/main.cf494b60.js.map",
+    "main.a4767876.js.map": "/static/js/main.a4767876.js.map",
     "787.5480e000.chunk.js.map": "/static/js/787.5480e000.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.610a7467.css",
-    "static/js/main.cf494b60.js"
+    "static/js/main.a4767876.js"
   ]
 }
