@@ -6,7 +6,7 @@ const path = require('path')
 app.use(cors())
 app.use(express.json())
 
-app.get('/', (req, res) => { 
+app.get('/prova', (req, res) => { 
     res.send("Funziona")
   })
 app.use( 

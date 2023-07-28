@@ -1,44 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.610a7467.css",
-    "main.js": "/static/js/main.1b955f9a.js",
+    "main.js": "/static/js/main.cf494b60.js",
     "static/js/787.5480e000.chunk.js": "/static/js/787.5480e000.chunk.js",
-    "static/media/20190820_161054.jpg": "/static/media/20190820_161054.525fc1ce52d9c8fbbf65.jpg",
-    "static/media/20190820_160929.jpg": "/static/media/20190820_160929.748f932b8ba0e0746ecb.jpg",
-    "static/media/20190821_143037.jpg": "/static/media/20190821_143037.b2365df734a875669e7b.jpg",
-    "static/media/20190820_214825.jpg": "/static/media/20190820_214825.1869edf52a119b2ad0fa.jpg",
-    "static/media/20190820_162417.jpg": "/static/media/20190820_162417.40cd2e894561d0a3b108.jpg",
-    "static/media/20190820_161041.jpg": "/static/media/20190820_161041.5f180daba002e9e8b4de.jpg",
-    "static/media/20190820_162457.jpg": "/static/media/20190820_162457.db6b634987888b57d48d.jpg",
-    "static/media/20190820_160755.jpg": "/static/media/20190820_160755.66f815c2964f536eea1e.jpg",
-    "static/media/20190820_132618.jpg": "/static/media/20190820_132618.57d01cb759f5218ee850.jpg",
-    "static/media/20220430_095345.jpg": "/static/media/20220430_095345.faa1796f8a59ac098b7d.jpg",
-    "static/media/6.jpg": "/static/media/6.db88c8430d9d1fd74c7c.jpg",
-    "static/media/pollo_alle_mandorle.jpg": "/static/media/pollo_alle_mandorle.db88c8430d9d1fd74c7c.jpg",
-    "static/media/2.jpg": "/static/media/2.1dbe42f2503c5c7b95db.jpg",
-    "static/media/flat-lay-tasty-food-on-table-arrangement.jpg": "/static/media/flat-lay-tasty-food-on-table-arrangement.1dbe42f2503c5c7b95db.jpg",
-    "static/media/1.jpg": "/static/media/1.fa73fd8cfbc18a639d50.jpg",
-    "static/media/5.jpg": "/static/media/5.385984329064a3c5c495.jpg",
-    "static/media/pho_vietnamita.jpg": "/static/media/pho_vietnamita.385984329064a3c5c495.jpg",
-    "static/media/20190820_132638.jpg": "/static/media/20190820_132638.6e0c8b2caea44b402aaa.jpg",
-    "static/media/ravioli.jpg": "/static/media/ravioli.d79727b47a952715cbce.jpg",
-    "static/media/20190819_213114.jpg": "/static/media/20190819_213114.98ae5f3773869f9191a1.jpg",
     "static/media/chicken-curry-black-cup-with-rice-noodles.jpg": "/static/media/chicken-curry-black-cup-with-rice-noodles.b3ef81445652011c51bb.jpg",
-    "static/media/3.jpg": "/static/media/3.e4c5a3d37c347c185b74.jpg",
-    "static/media/fried-spring-rolls-cutting-board.jpg": "/static/media/fried-spring-rolls-cutting-board.e4c5a3d37c347c185b74.jpg",
-    "static/media/4.jpg": "/static/media/4.b948f6ddcd26c2d00f78.jpg",
-    "static/media/maki-sushi-isolated-on-white.jpg": "/static/media/maki-sushi-isolated-on-white.b948f6ddcd26c2d00f78.jpg",
-    "static/media/sushi.jpg": "/static/media/sushi.f25a87c2018ff9b9afc7.jpg",
-    "static/media/riso.jpg": "/static/media/riso.988183a296a8f26a362c.jpg",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88.svg",
     "index.html": "/index.html",
     "static/media/testo.txt": "/static/media/testo.31d6cfe0d16ae931b73c.txt",
     "main.610a7467.css.map": "/static/css/main.610a7467.css.map",
-    "main.1b955f9a.js.map": "/static/js/main.1b955f9a.js.map",
+    "main.cf494b60.js.map": "/static/js/main.cf494b60.js.map",
     "787.5480e000.chunk.js.map": "/static/js/787.5480e000.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.610a7467.css",
-    "static/js/main.1b955f9a.js"
+    "static/js/main.cf494b60.js"
   ]
 }
