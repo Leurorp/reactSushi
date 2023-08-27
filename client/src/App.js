@@ -32,8 +32,16 @@ function App()
       setList(oldCards => [...oldCards,element])},1000)//aggiungi element a oldCards  
     }
     
-  const handleDelete=(e)=>{
-    setList(delcards => delcards.filter(card => card.id !== e))}
+  const handleDelete=(e)=>{    
+    const cardDelete = list.filter(card => card.id===e)
+    const imgDelete = cardDelete[0].immagine
+    // elimino la foto dalla cartella immagini con nodejs
+    fetch (`/delete`,{method:'POST',body:JSON.stringify({imgDelete:imgDelete}), headers:{'Content-Type':'application/json'}})
+    .then(response=>response.json())
+    .then((res) => {console.log(res) })
+    .catch((err) => {console.error(err) }) 
+    setList(delcards => delcards.filter(card => card.id !== e)) 
+  }
 
   const handleIncrement=(e)=>{
     const cardInc = list.filter(card => card.id===e); console.log(cardInc[0])
