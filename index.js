@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const app=express()
 const upload=require('express-fileupload')
+const fs = require('fs')
 const path = require('path')
 app.use(cors())
 app.use(express.json())
@@ -21,12 +22,20 @@ app.post('/upload', (req, res, next) => {
     let uploadFile = req.files.file//si riferisce al file come nome nel campo di input.
     const name = uploadFile.name 
     uploadFile.mv(`${__dirname}/client/src/immagini/${name}`, function(err) { 
-        if (err) { 
-        return res.status(500).send(err ) 
-        } 
+        if (err) {return res.status(500).send(err)} 
         return res.status(200).json({ status: 'uploaded', name }) })
     })
 
+app.post('/delete',(req,res) => {
+  const filePath = {...req.body}; 
+  if (fs.existsSync(filePath.imgDelete)) {
+        fs.unlink(filePath.imgDelete, (err) => {
+            if (err) {return res.status(500).send(err)}
+            return res.status(200).json({ status: 'deleted', filePath })
+                                      })
+                                } 
+    else {return res.status(404).json({ status: 'not found' })}
+  })
 app.use(express.static(path.resolve(__dirname, 'client/build')))
 
 app.get('*', (req, res) => {

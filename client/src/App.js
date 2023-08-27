@@ -34,7 +34,8 @@ function App()
     
   const handleDelete=(e)=>{    
     const cardDelete = list.filter(card => card.id===e)
-    const imgDelete = cardDelete[0].immagine
+    let imgDelete = cardDelete[0].immagine
+    imgDelete="./client/src"+imgDelete.substring(1)
     // elimino la foto dalla cartella immagini con nodejs
     fetch (`/delete`,{method:'POST',body:JSON.stringify({imgDelete:imgDelete}), headers:{'Content-Type':'application/json'}})
     .then(response=>response.json())
