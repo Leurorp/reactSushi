@@ -25,7 +25,6 @@ app.post('/upload', (req, res) => {
   const name = uploadFile.name
   fs.readdir(testFolder, (error, files) => {
     if (error) { return res.status(500).send(error) }
-    console.log(files)
     if (files.length >= 9) {
       uploadFile.mv(`${__dirname}/client/src/immagini/${name}`, function (err) {
         if (err) { return res.status(500).send(err) }

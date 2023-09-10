@@ -38,16 +38,16 @@ function App() {
       setTroppeFoto("Reset elementi, troppe immagini in memoria")
       return ""
     }
-    if (delAllimg==='foto esistente!!!!') {
+    if (delAllimg === 'foto esistente!!!!') {
       setTroppeFoto("Nome dell'immagine già esistente, riprova con un altro nome di immagine")
-      return ""  
+      return ""
     }
     console.log(image.name)
     const newImg = `./immagini/${image.name}`
     let element = { id: uuidv4(), nome: contact.nome, prezzo: contact.prezzo, immagine: newImg, quantità: 0 }; console.log(element)
     setTimeout(function () {
       setList(oldCards => [...oldCards, element])
-    }, 2000) //aggiungi element a oldCards   
+    }, 1000) //aggiungi element a oldCards   
   }
 
   const handleDelete = (e) => {
@@ -69,6 +69,7 @@ function App() {
   }
 
   function modify(e) {
+    setTroppeFoto("")
     const edit = document.getElementById('edit')
     if (edit.className === 'divOn') {
       edit.className = 'divOff'
@@ -94,26 +95,47 @@ function App() {
       const fd = new FormData(); fd.append('file', file)
       setMsg('Uploading...')
       setProgress(prevState => { return { ...prevState, started: true } })
+      let risposta
       axios.post('/upload', fd, {
         onUploadProgress: progressEvent => {
           let percentComplete = progressEvent.loaded / progressEvent.total
           setProgress(prevState => { return { ...prevState, pc: percentComplete * 100 } })
         },
       })
-        .then(res => { setMsg('Upload succesfully'); console.log(res.data) })
+        .then(data => {
+          risposta = data.data; setMsg('Upload succesfully'); console.log(risposta)
+          generaRighe(data.data)
+        })
         .catch((err) => { setMsg('Upload failed'); console.error(err) })
     }
-    // se mantengo la vecchia immagine devo togliere da oldImg ./immagini/
-    if (!file) { file = { name: oldImg.substring(11) } }; setFile(""); setOldImg("")
-    setTimeout(function () {
-      const index = list.findIndex(card => card.id === idEdit) // trovo l'indice INDEX dell'elemento da modificare
-      const elementModify = { id: idEdit, nome: nomeEdit, prezzo: prezzoEdit, immagine: `./immagini/${file.name}`, quantità: 0 }
-      const newItem = [...list]; newItem[index] = elementModify
-      setList(newItem)
+    // se la foto non viene modificata
+    if (!file) { file = { name: oldImg.substring(11) }; generaRighe() }
+
+    function generaRighe(risposta) {
+      if (risposta === 'foto esistente!!!!') {
+        setTroppeFoto("Nome dell'immagine già esistente, riprova con un altro nome di immagine")
+      } else {
+        setTimeout(function () {
+          const index = list.findIndex(card => card.id === idEdit) // trovo l'indice INDEX dell'elemento da modificare
+          const elementModify = { id: idEdit, nome: nomeEdit, prezzo: prezzoEdit, immagine: `./immagini/${file.name}`, quantità: 0 }
+          const newItem = [...list]; newItem[index] = elementModify
+          setList(newItem)
+          console.log(list)
+          // elimino la foto vecchia che ho sostituito
+          let imgDelete = "./client/src" + oldImg.substring(1)
+          fetch(`/delete`, { method: 'POST', body: JSON.stringify({ imgDelete: imgDelete }), headers: { 'Content-Type': 'application/json' } })
+            .then(response => response.json())
+            .then((res) => { console.log(res) })
+            .catch((err) => { console.error(err) })
+        }, 1000)
+      }
+      setFile(""); setOldImg("")
       const edit = document.querySelector('#edit')
       edit.className = "divOff"
-      document.getElementById('insPiet').disabled = false; console.log(list)
-    }, 2000)
+      document.getElementById('insPiet').disabled = false;
+    }
+    // se mantengo la vecchia immagine devo togliere da oldImg ./immagini/    
+
   }
   return (<>
     <Navbar message={list} />
