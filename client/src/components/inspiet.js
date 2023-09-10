@@ -2,8 +2,8 @@ import { useState } from "react"
 import axios from 'axios'
 import '../App.css'
  
-function InsPietanza({addPietanza}) {  
-    const nuovaPietanza=()=>{
+function InsPietanza({addPietanza}) { 
+    const nuovaPietanza=()=>{ 
         const edCrd = document.querySelectorAll('.editCard')
         setProgress(prevState=>{return{...prevState, started:false}}) 
         setMsg(null)      
@@ -22,11 +22,11 @@ function InsPietanza({addPietanza}) {
 
         const handleChange = (event) => {
             setContactInfo({ ...contactInfo, [event.target.name]: event.target.value })}
+
         const handleSubmit = (evento) => {
             evento.preventDefault() 
             if (!file) { setMsg('No file selected'); return } 
             if (file.type!=='image/jpeg'){setMsg("Can't uploading file that not image !"); return}    
-            addPietanza(contactInfo,file)
             const fd = new FormData()
             fd.append('file',file) 
             setMsg('Uploading...')
@@ -35,14 +35,14 @@ function InsPietanza({addPietanza}) {
             axios.post('/upload',fd, {
                  onUploadProgress:progressEvent=>{ let percentComplete=progressEvent.loaded / progressEvent.total
                     setProgress(prevState => {return {...prevState,pc:percentComplete*100}})
-                },
-           
-                })
-            .then(res => { setMsg('Upload succesfully'); console.log(res.data) })
-            .catch((err) => { setMsg('Upload failed'); console.error(err) })
-            const yu=document.querySelector('#pra');const edCrd = document.querySelectorAll('.editCard')
+                }, })
+            .then(res => { setMsg('Upload succesfully'); console.log(res.data)
+                addPietanza(contactInfo,file,res.data)           
+             })
+            .catch((err) => { setMsg('Upload failed'); console.error(err) })           
+            setTimeout (function(){ const yu=document.querySelector('#pra');const edCrd = document.querySelectorAll('.editCard')
             yu.style.fontSize="0%"; yu.style.width="0%"; yu.style.marginLeft="-1200px"; yu.style.maxHeight="0px"
-            for (let i = 0; i < edCrd.length; i++) {edCrd[i].disabled = false}  
+            for (let i = 0; i < edCrd.length; i++) {edCrd[i].disabled = false} },1000) 
             }
 return(
     <>  

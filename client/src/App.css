@@ -47,6 +47,23 @@ label {padding:5px}
   }
 }
 
+.autocomplete {position:relative; display:inline-block
+}
+.autocomplete-items {
+  position:absolute; border:1px solid black;  
+  border-bottom:none; border-top:none;
+  z-index:99; top:100%; left:0; right:0;
+}
+  .autocomplete-items div {
+    padding:10px; cursor:pointer; background-color:rgb(85, 75, 94); border-bottom:1px solid#d4d4d4;
+    color:whitesmoke 
+}
+  .autocomplete-items div:hover {background-color:#201d1d; 
+}
+  .autocomplete-active {background-color:DodgerBlue !important; color:#ffffff; 
+}
+
+
 /* PC DESKTOP */
 @media (min-width:48em) {
   
