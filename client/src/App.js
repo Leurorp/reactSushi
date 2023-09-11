@@ -47,7 +47,7 @@ function App() {
     let element = { id: uuidv4(), nome: contact.nome, prezzo: contact.prezzo, immagine: newImg, quantità: 0 }; console.log(element)
     setTimeout(function () {
       setList(oldCards => [...oldCards, element])
-    }, 1000) //aggiungi element a oldCards   
+    }, 3000) //aggiungi element a oldCards   
   }
 
   const handleDelete = (e) => {
@@ -127,7 +127,7 @@ function App() {
             .then(response => response.json())
             .then((res) => { console.log(res) })
             .catch((err) => { console.error(err) })
-        }, 1000)
+        }, 3000)
       }
       setFile(""); setOldImg("")
       const edit = document.querySelector('#edit')
