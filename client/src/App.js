@@ -109,7 +109,7 @@ function App() {
         .catch((err) => { setMsg('Upload failed'); console.error(err) })
     }
     // se la foto non viene modificata,se mantengo la vecchia immagine devo togliere da oldImg ./immagini/
-    if (!file) { file = { name: oldImg.substring(11) }; generaRighe() }
+    if (!file) { file = { name: oldImg.substring(11) };generaRighe() }
 
     function generaRighe(risposta) {
       if (risposta === 'foto esistente!!!!') {
@@ -121,12 +121,14 @@ function App() {
           const newItem = [...list]; newItem[index] = elementModify
           setList(newItem)
           console.log(list)
-          // elimino la foto vecchia che ho sostituito
-          let imgDelete = "./client/src" + oldImg.substring(1)
+          // elimino la foto vecchia che ho sostituito (se è stata sostituita)
+          if (file.name!=oldImg.substring(11)) {
+          let imgDelete = "./client/src" + oldImg.substring(1); alert('lkjasdjhdfas')
           fetch(`/delete`, { method: 'POST', body: JSON.stringify({ imgDelete: imgDelete }), headers: { 'Content-Type': 'application/json' } })
             .then(response => response.json())
             .then((res) => { console.log(res) })
             .catch((err) => { console.error(err) })
+          }
         }, 1000)
       }
       setFile(""); setOldImg("")
@@ -165,7 +167,8 @@ function App() {
           {progress.started && <progress max="100" value={progress.pc}></progress>}
           {msg && <span>{msg}</span>}
           <span style={{ position: 'absolute', margin: '-15px 0px 0px 10px' }}>
-            {oldImg && <img src={require(`${oldImg}`)} width={100} height={100} alt="" />}
+            {/* {oldImg && <img src={require(`${oldImg}`)} width={100} height={100} alt="" />} */}
+            {oldImg && <img width={100} height={100} alt={oldImg} />}
           </span>
           <span style={{ position: 'absolute', margin: '-15px 0px 0px 10px' }}>
             {imageNew && <img src={imageNew} width={100} height={100} alt="" />}
