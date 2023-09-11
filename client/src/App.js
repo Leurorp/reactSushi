@@ -47,7 +47,7 @@ function App() {
     let element = { id: uuidv4(), nome: contact.nome, prezzo: contact.prezzo, immagine: newImg, quantità: 0 }; console.log(element)
     setTimeout(function () {
       setList(oldCards => [...oldCards, element])
-    }, 3000) //aggiungi element a oldCards   
+    }, 1000); console.log(list) //aggiungi element a oldCards   
   }
 
   const handleDelete = (e) => {
@@ -108,7 +108,7 @@ function App() {
         })
         .catch((err) => { setMsg('Upload failed'); console.error(err) })
     }
-    // se la foto non viene modificata
+    // se la foto non viene modificata,se mantengo la vecchia immagine devo togliere da oldImg ./immagini/
     if (!file) { file = { name: oldImg.substring(11) }; generaRighe() }
 
     function generaRighe(risposta) {
@@ -127,15 +127,13 @@ function App() {
             .then(response => response.json())
             .then((res) => { console.log(res) })
             .catch((err) => { console.error(err) })
-        }, 3000)
+        }, 1000)
       }
       setFile(""); setOldImg("")
       const edit = document.querySelector('#edit')
       edit.className = "divOff"
       document.getElementById('insPiet').disabled = false;
-    }
-    // se mantengo la vecchia immagine devo togliere da oldImg ./immagini/    
-
+    }    
   }
   return (<>
     <Navbar message={list} />
@@ -182,7 +180,8 @@ function App() {
           <div key={card.id} className="card" style={{ width: '18rem', textAlign: 'center' }}>
             <button onClick={() => handleIncrement(card.id)} className='btn btn-primary'>
               Aggiungi<span id={card.id} className='badge badge-light'>{card.quantità}</span></button>
-            <img src={require(`${card.immagine}`)} className="card-img-top" alt="" style={{ maxHeight: '10rem' }} />
+            {/* <img src={require(`${card.immagine}`)} className="card-img-top" alt="" style={{ maxHeight: '10rem' }} /> */}
+            <img  className="card-img-top" alt="foto non visualizzabile in render.com" style={{ maxHeight: '10rem' }} />
             <div className="card-body">
               <h5 className='card-title'>{card.nome}</h5>
               <p className="card-text">€{card.prezzo}</p>
